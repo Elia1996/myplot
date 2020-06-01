@@ -84,6 +84,8 @@ class plotter:
 			plt.show()
 	
 	def set_newline(sf, stringa):
+                """Set correct nealine considering the max length of title
+                """
 		if len(stringa)<sf.title_maxl:
 			return stringa
 		offset=0
@@ -98,6 +100,25 @@ class plotter:
 		if newstr[len(newstr)-1]=="\n":
 			newstr=newstr[0:-1]
 		return newstr
-			
 
-	
+           
+def get_default_style(title_maxl):
+    plot_style = { 'style' : 'Solarize_Light2',
+                                'marker' : '.',
+                                'linewidth' : 0.5,
+                                'color' : '#00a1dc'
+                        }
+
+    objp=plotter(title_maxl,False,**plot_style)
+    objp.title_font['size']=18
+    objp.title_font['fontweight']='bold'
+    objp.ticksize(12)
+    objp.x_font['color']='#667B83'
+    objp.x_font['size']='12'
+    objp.y_font['size']='12'
+    objp.y_font['color']='#667B83'
+    objp.x_font['weight']='bold'
+    objp.x_font['fontweight']='bold'
+    objp.y_font['weight']='bold'
+    objp.y_font['fontweight']='bold'
+    return objp
