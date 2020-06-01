@@ -5,7 +5,7 @@ from matplotlib module some feature are added to
 simplify the creation of a graph. A default initialization
 of a graph object is provided by:
 
-	objp = get_default_style(tytle_maxl)
+	objp = get_default_style(40)
 
 That return a full intialized graph, simply passing 
 data to plotXY or semilogxXY create the plot:
